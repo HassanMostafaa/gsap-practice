@@ -7,6 +7,9 @@ import {useLayoutEffect, useMemo, useRef} from "react";
 
 export default function Home() {
     const rootRef = useRef<HTMLDivElement | null>(null);
+
+    // useMemo prevents splashTitles from triggering useLayoutEffect on every render
+    // Avoids recreating splashTitles on every render, keeping useLayoutEffect stable
     const splashTitles = useMemo(
         () => ["Software Engineer", "CMS Developer", "Designer"],
         []
