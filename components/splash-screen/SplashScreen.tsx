@@ -1,15 +1,11 @@
-import React, { useRef } from "react";
-
-export const SplashScreen = () => {
-  const splashScreenText = ["Software Engineer", "CMS Developer", "Designer"];
-  const splashScreenRef = useRef<HTMLDivElement | null>(null);
+"use client";
+export const SplashScreen = ({ headlines }:{headlines: string[]}) => {
   return (
     <div
-      ref={splashScreenRef}
       id="splash-screen"
-      className="h-screen flex-col gap-12 flex absolute left-0 top-0 w-screen bg-neutral-100"
+      className="h-screen transit opacity-0  flex-col gap-12 flex absolute left-0 top-0 w-screen bg-neutral-100"
     >
-      {splashScreenText.map((text, index) => (
+      {headlines.map((text, index) => (
         <h1
           className="text-3xl sm:text-7xl"
           id={`splash-title-${index}`}

@@ -19,7 +19,7 @@ export const runSplashSequence = (titles: string[]) => {
             opacity: 0,
             y: 30,
             stagger: 0.4,
-            delay: 0.8,
+            delay: 0,
         })
         .to("#splash-screen", {
             xPercent: 100,
