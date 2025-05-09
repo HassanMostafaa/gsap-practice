@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GSAP Animation Practice Project
+
+This project is a playground for practicing GSAP (GreenSock Animation Platform) animations using Next.js and React. It serves as a learning environment for mastering web animations and interactive experiences.
+
+## Tech Stack
+
+- Next.js 15.3.2
+- React 19.0.0
+- GSAP 3.13.0
+- TypeScript
+- Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repository
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn install
 ```
+1. Run the development server:
+``` bash
+yarn dev
+```
+1. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
+The project is organized to facilitate GSAP animation practice:
+- - Next.js application pages and components `app/`
+- `components/` - Reusable React components with GSAP animations
+- `styles/` - Global styles and Tailwind CSS configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available GSAP Features
+This project includes GSAP 3.13.0 with access to:
+- Basic Tweens
+- Timelines
+- ScrollTrigger
+- Basic Eases
+- Transform Properties
+- CSS Properties
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development Guidelines
+1. Each animation should be properly cleaned up using cleanup function `useEffect`
+2. Use GSAP's `gsap.context()` for better component isolation
+3. Implement animations following React best practices
+4. Utilize TypeScript for type-safe animations
 
-## Learn More
+## Learning Resources
+- [GSAP Documentation](https://greensock.com/docs/)
+- [GSAP with React Guide](https://greensock.com/react)
+- [Next.js Documentation](https://nextjs.org/docs)
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
+Feel free to:
+- Create new animation examples
+- Improve existing animations
+- Add documentation
+- Share interesting animation techniques
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This is a personal practice project. Feel free to use it as reference for your own learning
