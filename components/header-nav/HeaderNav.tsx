@@ -14,11 +14,16 @@ export const HeaderNav = () => {
       <div className="flex justify-between items-center p-4 contain bg-black text-white">
         <div className="text-2xl">N.GSAP</div>
         <div className="flex gap-8 items-center">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+          <span className="max-md:hidden">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
+          </span>
           <HamburgerMenuIcon isOpen={isMenuOpen} toggle={toggleMenu} />
-          <HamburgerMenu isOpen={isMenuOpen} />
+          <HamburgerMenu
+            isOpen={isMenuOpen}
+            closeMenu={() => setIsMenuOpen(false)}
+          />
         </div>
       </div>
     </nav>

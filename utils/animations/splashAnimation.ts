@@ -25,7 +25,7 @@ export const runSplashSequence = (titles: string[]) => {
       delay: 0,
     })
     .to("#splash-screen", {
-      xPercent: "+=150",
+      xPercent: "+=200",
       skewX: "-30",
       duration: 1.6,
       delay: 0.4,

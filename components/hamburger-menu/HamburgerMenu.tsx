@@ -12,9 +12,10 @@ const navLinks = [
 
 interface Props {
   isOpen: boolean;
+  closeMenu: () => void;
 }
 
-export const HamburgerMenu = ({ isOpen }: Props) => {
+export const HamburgerMenu = ({ isOpen, closeMenu }: Props) => {
   const hamburgerMenuRef = useRef<HTMLDivElement>(null);
   const tl = useRef(
     gsap.timeline({ paused: true, defaults: { ease: "power2.inOut" } })
@@ -23,9 +24,8 @@ export const HamburgerMenu = ({ isOpen }: Props) => {
   useGSAP(
     () => {
       tl.current
-        .set(hamburgerMenuRef.current, { yPercent: -100 }) // Initial hidden state
         .to(hamburgerMenuRef.current, {
-          yPercent: 0,
+          top: 0,
           duration: 0.8,
         })
         .from(
@@ -35,7 +35,7 @@ export const HamburgerMenu = ({ isOpen }: Props) => {
             stagger: 0.15,
             duration: 0.5,
           },
-          "-=0.4" // overlaps slightly with slide-in for smoother effect
+          "-=0.4"
         );
     },
     { scope: hamburgerMenuRef }
@@ -52,15 +52,17 @@ export const HamburgerMenu = ({ isOpen }: Props) => {
   return (
     <div
       ref={hamburgerMenuRef}
-      className="w-screen h-screen fixed top-0 left-0 z-10 p-3 bg-[#c5fb45] text-black overflow-hidden"
+      className="w-screen h-screen fixed -top-full left-0 z-10 p-3 bg-[#c5fb45] text-black overflow-hidden"
     >
       <div className="contain h-full">
         <h2 className="text-3xl hamburger-menu-title">MENU</h2>
-        <div className="links flex flex-col p-10 text-8xl max-md:text-5xl border-4 h-fit">
+        <div className="links flex flex-col py-20 text-8xl max-md:text-5xl h-fit">
           {navLinks.map(({ href, label }) => (
             <div key={href} className="relative w-fit overflow-hidden">
               <span className="absolute link-overlay bottom-0 left-0 h-0 w-full bg-[#c5fb45]" />
-              <Link href={href}>{label}</Link>
+              <Link href={href} onClick={closeMenu}>
+                {label}
+              </Link>
             </div>
           ))}
         </div>
