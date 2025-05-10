@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` overflow-hidden antialiased h-screen min-h-screen  w-screen flex justify-between flex-col items-center`}
+        className={`overflow-hidden antialiased h-screen min-h-screen  w-screen flex justify-between flex-col items-center`}
       >
         <HeaderNav />
         {children}

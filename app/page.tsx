@@ -3,7 +3,10 @@ import { HeroText } from "@/components/hero-text/HeroText";
 import { SplashScreen } from "@/components/splash-screen/SplashScreen";
 import { runSplashSequence} from "@/utils/animations/splashAnimation";
 import gsap from "gsap";
-import {useLayoutEffect, useMemo, useRef} from "react";
+import { useMemo, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 export default function Home() {
     const rootRef = useRef<HTMLDivElement | null>(null);
@@ -14,14 +17,11 @@ export default function Home() {
         () => ["Software Engineer", "CMS Developer", "Designer"],
         []
     );
-    useLayoutEffect(() => {
-        const context = gsap.context(() => {
-            runSplashSequence(splashTitles);
-        }, rootRef);
 
-        return () => context.revert();
-    }, [splashTitles]);
+    useGSAP(()=>{
+        runSplashSequence(splashTitles);
 
+    },{scope:rootRef, revertOnUpdate:true})
     return (
         <div className="flex-1" ref={rootRef}>
             <SplashScreen headlines={splashTitles}  />
