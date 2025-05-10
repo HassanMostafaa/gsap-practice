@@ -9,7 +9,7 @@ export const runSplashSequence = (titles: string[]) => {
       xPercent: 110,
       skewX: 0,
       duration: 1.5,
-      delay: 0.4,
+      delay: 0.8,
     })
     .to(ids, {
       opacity: 1,
