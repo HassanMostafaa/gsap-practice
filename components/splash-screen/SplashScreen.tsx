@@ -3,7 +3,7 @@ export const SplashScreen = ({ headlines }: { headlines: string[] }) => {
   return (
     <div
       id="splash-screen"
-      className="h-screen transit flex-col gap-12 flex absolute -left-[112%] top-0 w-screen skew-x-[20deg] bg-neutral-100"
+      className="h-screen p-10 transit flex-col gap-12 flex absolute -left-[112%] top-0 w-screen skew-x-[20deg] bg-neutral-100"
     >
       {headlines.map((text, index) => (
         <h1

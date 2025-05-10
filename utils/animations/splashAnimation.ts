@@ -6,7 +6,7 @@ export const runSplashSequence = (titles: string[]) => {
 
   timeline
     .to("#splash-screen", {
-      xPercent: 110,
+      xPercent: 112,
       skewX: 0,
       duration: 1.5,
       delay: 0.8,
@@ -34,7 +34,7 @@ export const runSplashSequence = (titles: string[]) => {
     .from("#hero-text", {
       opacity: 0,
       x: 10,
-      duration: 0.4,
+      duration: 1,
     });
 
   return timeline;
